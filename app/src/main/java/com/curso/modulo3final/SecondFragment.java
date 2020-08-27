@@ -9,8 +9,10 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-public class SecondFragment extends Fragment {
+import com.curso.modulo3final.model.Apartment;
 
+public class SecondFragment extends Fragment {
+    Apartment apartment;
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -22,6 +24,7 @@ public class SecondFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        apartment = (Apartment)getArguments().get("apartment");
 
         view.findViewById(R.id.button_second).setOnClickListener(new View.OnClickListener() {
             @Override
